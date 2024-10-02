@@ -54,7 +54,7 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(propertyBool('use_modern_java_syntax') ? 16 : 8))
         // Azul covers the most platforms for Java 8 toolchains, crucially including MacOS arm64
-        vendor.set(JvmVendorSpec.AZUL)
+
     }
     if (propertyBool('generate_sources_jar')) {
         withSourcesJar()
@@ -298,7 +298,7 @@ tasks.withType(JavaCompile).configureEach {
         options.release.set(8)
         javaCompiler.set(javaToolchains.compilerFor {
             languageVersion.set(JavaLanguageVersion.of(16))
-            vendor.set(JvmVendorSpec.AZUL)
+           
         })
     }
 }
